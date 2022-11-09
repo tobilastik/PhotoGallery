@@ -11,14 +11,11 @@ const mockProps: PopupModalProps = {
 };
 
 const renderComponent = () => {
-  const res = render(<PopupModal {...mockProps} />);
-
-  return {...res};
+  return render(<PopupModal {...mockProps} />);
 };
 
-describe('ManageGoalModal', () => {
+describe('PopupModal', () => {
   afterEach(jest.clearAllMocks);
-
   it('renders correctly', () => {
     const {toJSON} = renderComponent();
     expect(toJSON()).toMatchSnapshot();

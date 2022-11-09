@@ -8,9 +8,7 @@ import {primary, primaryLight, white} from '../../constants/colors';
 import {screenHeight} from '../../constants/dimensions';
 import img from '../../constants/images';
 
-interface HomeHeaderProps {}
-
-const HomeHeader = (props: HomeHeaderProps) => {
+const HomeHeader = () => {
   return (
     <View>
       <View style={styles.header}>

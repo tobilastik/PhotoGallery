@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ManageGoalModal renders correctly 1`] = `
+exports[`PopupModal renders correctly 1`] = `
 <Modal
   hardwareAccelerated={false}
   onRequestClose={[MockFunction]}

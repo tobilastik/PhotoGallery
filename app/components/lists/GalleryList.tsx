@@ -18,7 +18,11 @@ const GalleryList = ({image, author, comment, id}: GalleryListProps) => {
 
   const handleOpenPopUp = (id: string) => {
     dispatch(photoAction.setSelectedPhoto(id));
-    setIsModalVisible(!isModalVisible);
+    setIsModalVisible(true);
+  };
+
+  const handleClosePopUp = () => {
+    setIsModalVisible(false);
     dispatch(commentAction.setEditComment(false));
   };
 
@@ -32,7 +36,7 @@ const GalleryList = ({image, author, comment, id}: GalleryListProps) => {
       </View>
       <GalleryDetails
         isModalVisible={isModalVisible}
-        handleOpenPopUp={handleOpenPopUp}
+        handleClosePopUp={handleClosePopUp}
         image={image}
         comment={comment}
       />

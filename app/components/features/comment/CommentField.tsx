@@ -10,13 +10,12 @@ import {photoAction} from '../../../store/actions';
 
 type CommentFieldProps = {
   comment: string;
-  setComment: () => void;
 };
 
-const CommentField = ({comment, setComment}: CommentFieldProps) => {
+const CommentField = ({comment}: CommentFieldProps) => {
   const [text, setText] = React.useState('');
   const dispatch = useDispatch();
-  const {photoGallery, selectedPhoto} = useSelector(
+  const {photoGallery, selectedPhotoID} = useSelector(
     (state: State) => state.photos,
   );
   const {editComment} = useSelector((state: State) => state.comment);
@@ -28,9 +27,8 @@ const CommentField = ({comment, setComment}: CommentFieldProps) => {
   }, [editComment]);
 
   const handleSendComment = () => {
-    setComment(text);
     const updatedData = photoGallery.map((item: {id: string}) =>
-      item.id === selectedPhoto ? {...item, comment: text} : item,
+      item.id === selectedPhotoID ? {...item, comment: text} : item,
     );
     dispatch(photoAction.setPhotos(updatedData));
     setText('');

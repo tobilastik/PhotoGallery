@@ -1,15 +1,7 @@
 import * as React from 'react';
-import {
-  Text,
-  View,
-  StyleSheet,
-  Image,
-  TextInput,
-  TouchableOpacity,
-} from 'react-native';
+import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import Flex from '../../layouts/Flex';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import {gray, primaryLight, red, textColor} from '../../../constants/colors';
+import {gray, red, textColor} from '../../../constants/colors';
 import img from '../../../constants/images';
 import {useDispatch, useSelector} from 'react-redux';
 import {State} from '../../../store/reducers';
@@ -21,13 +13,13 @@ type CommentSectionProps = {
 
 const CommentSection = ({comment}: CommentSectionProps) => {
   const dispatch = useDispatch();
-  const {photoGallery, selectedPhoto} = useSelector(
+  const {photoGallery, selectedPhotoID} = useSelector(
     (state: State) => state.photos,
   );
 
   const handleDeleteComment = () => {
     const updatedData = photoGallery.map((item: {id: string}) =>
-      item.id === selectedPhoto ? {...item, comment: null} : item,
+      item.id === selectedPhotoID ? {...item, comment: null} : item,
     );
     dispatch(photoAction.setPhotos(updatedData));
   };

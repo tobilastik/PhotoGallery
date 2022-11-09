@@ -2,12 +2,12 @@ import { PHOTO_GALLERY, SELECTED_PHOTO} from '../types';
 
 const initialstate = {
   photoGallery: [],
-  selectedPhoto: ''
+  selectedPhotoID: ''
 };
 
 type Action = {
   type: string;
-  payload?: any;
+  payload?: [];
 };
 
 export default (state: any = initialstate, action: Action) => {
@@ -18,7 +18,7 @@ export default (state: any = initialstate, action: Action) => {
       });
        case SELECTED_PHOTO:
       return Object.assign({}, state, {
-        selectedPhoto: action.payload,
+        selectedPhotoID: action.payload,
       });
     default:
       return state;

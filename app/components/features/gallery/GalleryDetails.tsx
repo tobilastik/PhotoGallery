@@ -13,31 +13,31 @@ import {primaryLight} from '../../../constants/colors';
 import CommentSection from '../comment/CommentSection';
 import CommentField from '../comment/CommentField';
 
-interface GalleryDetailsProps {
+type GalleryDetailsProps = {
   isModalVisible: boolean;
   image: string;
   comment: string;
-  handleOpenPopUp: (...args: any[]) => void;
-}
+
+  handleClosePopUp: () => void;
+};
 
 const GalleryDetails = ({
   isModalVisible,
   image,
-  handleOpenPopUp,
+
+  handleClosePopUp,
   comment,
 }: GalleryDetailsProps) => {
-  const [, setComment] = React.useState('');
-
   return (
     <View>
-      <PopupModal modalVisible={isModalVisible} requestClose={handleOpenPopUp}>
+      <PopupModal modalVisible={isModalVisible} requestClose={handleClosePopUp}>
         <View style={{padding: 12}}>
-          <TouchableOpacity style={styles.closeIcon} onPress={handleOpenPopUp}>
+          <TouchableOpacity style={styles.closeIcon} onPress={handleClosePopUp}>
             <MaterialIcons name="cancel" size={24} color={primaryLight} />
           </TouchableOpacity>
           <ScrollView showsVerticalScrollIndicator={false}>
             <Image style={styles.expandPhoto} source={{uri: image}} />
-            <CommentField setComment={setComment} comment={comment} />
+            <CommentField comment={comment} />
             {comment ? <CommentSection comment={comment} /> : null}
           </ScrollView>
         </View>
