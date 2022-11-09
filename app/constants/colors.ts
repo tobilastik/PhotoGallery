@@ -1,0 +1,6 @@
+export const primary	= '#ff7648'
+export const primaryLight = '#f88d67'
+export const white	= '#ffffff'
+export const gray = '#D3D3D3'
+export const textColor= '#454545'
+export const red= '#FF0000'
