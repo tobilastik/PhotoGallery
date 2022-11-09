@@ -7,7 +7,7 @@ import {
   ScrollView,
 } from 'react-native';
 import {screenHeight, screenWidth} from '../../../constants/dimensions';
-import PopupModal from '../../modals';
+import PopupModal from '../../modals/PopupModal';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {primaryLight} from '../../../constants/colors';
 import CommentSection from '../comment/CommentSection';

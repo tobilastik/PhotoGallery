@@ -1,15 +1,14 @@
 import React, {ReactElement} from 'react';
 import {View, Modal, SafeAreaView} from 'react-native';
 import styles from './style';
-import {useDimensions} from '../../constants/dimensions';
 
-type PopupModalProps = {
+export type PopupModalProps = {
   requestClose: () => void;
   children: ReactElement;
   modalVisible: boolean;
 };
 
-const PopupModal = ({
+export const PopupModal = ({
   children,
   requestClose,
   modalVisible,
