@@ -9,7 +9,7 @@ type Action = {
   payload?: [];
 };
 
-export default (state: {} = initialstate, action: Action) => {
+export default (state: any = initialstate, action: Action) => {
   switch (action.type) {
     case EDIT_COMMENT:
       return Object.assign({}, state, {
